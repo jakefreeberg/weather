@@ -2,7 +2,8 @@
 
 angular.module('weatherApp', [
   'ngResource',
-  'ngRoute'
+  'ngRoute',
+  'geolocation'
 ])
   .config(function ($routeProvider) {
     $routeProvider
