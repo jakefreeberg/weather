@@ -1,26 +1,26 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">weather</h3>
+<ul class="list-group">
+	<li class="list-group-item item-{{ $index }}" ng-repeat="weather in weatherData.query.results.channel.item.forecast">
+		<span class="day">{{ weather.day }}</span>
+		<i class="icon-{{ weather.code }}"></i> 
+		{{ weather.high }} &deg;{{ weatherData.query.results.channel.units.temperature }} 
+	</li>
+</ul>
+
+<div> <label>Location: </label>
+	<select select-location>{{ locationChoices }}
+		<option ng-repeat="location in locationChoices" value="{{ location.woeid }}">{{ location.name }}</option>
+		<option value="mine">* My Location *</option>
+	</select>
 </div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
+<div> <label>Ideal Weather Condition: </label>
+	<select select-location>{{ locationChoices }}
+		<option ng-repeat="condition in weatherConditions" value="{{ condition.codes }}">{{ condition.name }}</option>
+		<option value="nope">* I don't care *</option>
+	</select>
 </div>
 
-<div class="row marketing">
-  {{ weatherData }}
-  {{ locationData }}
-</div>
-
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
+<div range-slider> <label>Ideal Temperature: </label>
+	<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+	<div id="slider-range"></div>
 </div>
