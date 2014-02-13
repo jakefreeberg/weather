@@ -11,15 +11,11 @@ angular.module('weatherApp')
 		{name:'Snowy', codes:[13,14,15,16,41,42,43,46]},
 		{name:'Stormy', codes:[0,1,2,3,4,37,38,39,17,35]}];
 
-	geolocation.getLocation().then(function(data){
-		$scope.locationData = yahooPlaceFinderService.query({latitude:data.coords.latitude, longitude:data.coords.longitude});
-	});
-
 	$scope.$watch('locationData.query.results.Result', function (newLocation){
 		if(newLocation){
 			$scope.weatherData = yahooWeatherService.query({woeid:newLocation.woeid});
 		}
 	} );
 
-	
+
 });

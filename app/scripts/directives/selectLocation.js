@@ -7,7 +7,16 @@ angular.module('weatherApp')
 			element.on('change', function(){
 
 				var woeid = element[0].options[element[0].selectedIndex].value;
-				scope.weatherData = yahooWeatherService.query({'woeid':woeid});
+
+				if(isNaN(woeid)){
+					geolocation.getLocation().then(function(data){
+						scope.locationData = yahooPlaceFinderService.query({latitude:data.coords.latitude, longitude:data.coords.longitude});
+					});
+				} else {
+					scope.weatherData = yahooWeatherService.query({'woeid':woeid});
+				}
+
+	
 
 			});
 		}

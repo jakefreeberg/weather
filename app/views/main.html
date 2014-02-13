@@ -8,6 +8,7 @@
 
 <div> <label>Location: </label>
 	<select select-location>{{ locationChoices }}
+		<option selected disabled>Please Select</option>
 		<option ng-repeat="location in locationChoices" value="{{ location.woeid }}">{{ location.name }}</option>
 		<option value="mine">* My Location *</option>
 	</select>

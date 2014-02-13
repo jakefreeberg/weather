@@ -9,15 +9,15 @@ angular.module('weatherApp')
 				console.log($( "#slider-range" ));
 				$( "#slider-range" ).slider({
 				  range: true,
-				  min: 0,
-				  max: 500,
-				  values: [ 75, 300 ],
+				  min: -10,
+				  max: 110,
+				  values: [ 55, 80 ],
 				  slide: function( event, ui ) {
-				    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+				    $( "#amount" ).val( ui.values[ 0 ] + "°F - " + ui.values[ 1 ] + "°F");
 				  }
 				});
-				// $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-				//   " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+				$( "#amount" ).val( String($( "#slider-range" ).slider( "values", 0 ))
+					+ "°F - " + String($( "#slider-range" ).slider( "values", 1 )) + "°F");
 			});
 
 			
