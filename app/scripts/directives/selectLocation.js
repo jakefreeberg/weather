@@ -16,7 +16,6 @@ angular.module('weatherApp')
 				      alert("We can not find your location: "+response)
 				    });
 				} else {
-					
 					scope.weatherData = yahooWeatherService.query({'woeid':woeid});
 					scope.locationData = null;
 				}
@@ -32,8 +31,6 @@ angular.module('weatherApp')
 			} );
 
 
-			// for dev:
-			scope.weatherData = yahooWeatherService.query({'woeid':2394207});
 		}
 	};
 });

@@ -19,10 +19,10 @@ angular.module('weatherApp')
 	$scope.highTemp = 0;
 	$scope.lowTemp = 0;
 
-	$scope.$watch('weatherData.query.results.Result', function (){_checkSettings();} );
-	$scope.$watch('conditions', function (){_checkSettings();} );
-	$scope.$watch('lowTemp', function (){_checkSettings();} );
-	$scope.$watch('highTemp', function (){_checkSettings();} );
+	$scope.$watch('weatherData.query', function (){console.log("NEW PLACE");_checkSettings();});
+	$scope.$watch('conditions', function (){_checkSettings();});
+	$scope.$watch('lowTemp', function (){_checkSettings();});
+	$scope.$watch('highTemp', function (){_checkSettings();});
 
 	/*
 	* The following function handles the core functionality here.

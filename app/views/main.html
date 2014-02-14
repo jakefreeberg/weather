@@ -2,13 +2,14 @@
 	<li ng-repeat="weather_item in weatherData.query.results.channel.item.forecast" class="{{weather_item.acceptable.css}} list-group-item item-{{ $index }} row" >
 		<div class="day col-md-4">{{ weather_item.day|fullDayName }}</div>
 		<div class="weather-condition col-md-4">
-			<i class="icon-{{ weather_item.code }}"></i> {{ weather_item.text }}
+			<i class="icon-{{ weather_item.code }}"></i> 
+			<span class="condition-text">{{ weather_item.text }}</span>
 		</div>
 		<div class="temps col-md-4">
 			<span class="hi-temp">{{ weather_item.high }}&deg;</span>
 			<span class="lo-temp">{{ weather_item.low }}&deg;</span>
 		</div>
-		<div class="no-go-message" ng-if="!weather_item.acceptable.verdict">
+		<div class="no-go-message col-md-12" ng-if="!weather_item.acceptable.verdict">
 			{{ weather_item.acceptable.message }}
 		</div>
 	</li>
@@ -28,6 +29,6 @@
 </div>
 
 <div range-slider> <label>Ideal Temperature: </label>
-	<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+	<input type="text" id="amount" style="">
 	<div id="slider-range"></div>
 </div>

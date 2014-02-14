@@ -7,22 +7,33 @@ body {
 }
 
 /* weather items */
+li.row {font-size: 16px;}
 .weather-condition { text-align: center; }
-.temps { text-align: right; }
+.condition-text { display: inline-block; vertical-align: top; }
+.temps { text-align: right; font-weight:bold; }
+.temps .lo-temp { color: #555; width:30px; display: inline-block;}
 
 /* hi/low lighting */
 li.unacceptable{
   background:#666;
 }
 
-.no-go-message {
+div.no-go-message {
   position:absolute;
-  left:50%;
-  width: 300px;
-  margin-left:-150px;
   text-align: center;
   color: #FFF;
+  font-weight:bold;
+  display:none;
 }
+li.unacceptable:hover div.no-go-message { display:block; }
+
+/* rangeSlider */
+#amount{
+  border:0; 
+  color:#333; 
+  font-weight:bold;
+}
+
 
 
 /* Customize container */
@@ -74,7 +85,7 @@ li.unacceptable{
 i {
   color: #333;
   font-family: 'MeteoconsRegular';
-  font-size: 24px;
+  font-size: 21px;
   font-weight: normal;
   font-style: normal;
   line-height: 1.0;
