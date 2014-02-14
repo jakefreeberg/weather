@@ -1,8 +1,16 @@
 <ul class="list-group">
-	<li class="list-group-item item-{{ $index }}" ng-repeat="weather in weatherData.query.results.channel.item.forecast">
-		<span class="day">{{ weather.day }}</span>
-		<i class="icon-{{ weather.code }}"></i> 
-		{{ weather.high }} &deg;{{ weatherData.query.results.channel.units.temperature }} 
+	<li ng-repeat="weather_item in weatherData.query.results.channel.item.forecast" class="{{weather_item.acceptable.css}} list-group-item item-{{ $index }} row" >
+		<div class="day col-md-4">{{ weather_item.day|fullDayName }}</div>
+		<div class="weather-condition col-md-4">
+			<i class="icon-{{ weather_item.code }}"></i> {{ weather_item.text }}
+		</div>
+		<div class="temps col-md-4">
+			<span class="hi-temp">{{ weather_item.high }}&deg;</span>
+			<span class="lo-temp">{{ weather_item.low }}&deg;</span>
+		</div>
+		<div class="no-go-message" ng-if="!weather_item.acceptable.verdict">
+			{{ weather_item.acceptable.message }}
+		</div>
 	</li>
 </ul>
 
@@ -12,13 +20,11 @@
 		<option ng-repeat="location in locationChoices" value="{{ location.woeid }}">{{ location.name }}</option>
 		<option value="mine">* My Location *</option>
 	</select>
+	<span class="my-location-name" ng-if="locationData">: {{ locationData.query.results.Result.city }}, {{ locationData.query.results.Result.statecode }} {{ locationData.query.results.Result.uzip }}</span>
 </div>
 
 <div> <label>Ideal Weather Condition: </label>
-	<select select-location>{{ locationChoices }}
-		<option ng-repeat="condition in weatherConditions" value="{{ condition.codes }}">{{ condition.name }}</option>
-		<option value="nope">* I don't care *</option>
-	</select>
+	<select ng-model="conditions" ng-options="c.name for c in weatherConditions"></select>
 </div>
 
 <div range-slider> <label>Ideal Temperature: </label>

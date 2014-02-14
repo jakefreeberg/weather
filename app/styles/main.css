@@ -6,32 +6,24 @@ body {
   padding-bottom: 20px;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+/* weather items */
+.weather-condition { text-align: center; }
+.temps { text-align: right; }
+
+/* hi/low lighting */
+li.unacceptable{
+  background:#666;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+.no-go-message {
+  position:absolute;
+  left:50%;
+  width: 300px;
+  margin-left:-150px;
+  text-align: center;
+  color: #FFF;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
 
 /* Customize container */
 @media (min-width: 768px) {
@@ -43,23 +35,8 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -97,49 +74,50 @@ body {
 i {
   color: #333;
   font-family: 'MeteoconsRegular';
-  font-size: 50px;
+  font-size: 24px;
   font-weight: normal;
   font-style: normal;
   line-height: 1.0;
 }
 
-.icon-0:before { content: ":"; }
-.icon-1:before { content: "p"; }
+.icon-0:before { content: "F"; }
+.icon-1:before { content: "T"; }
 .icon-2:before { content: "S"; }
-.icon-3:before { content: "Q"; }
-.icon-4:before { content: "S"; }
+.icon-3:before { content: "R"; }
+.icon-4:before { content: "Q"; }
 .icon-5:before { content: "W"; }
 .icon-6:before { content: "W"; }
 .icon-7:before { content: "W"; }
 .icon-8:before { content: "W"; }
-.icon-9:before { content: "I"; }
-.icon-10:before { content: "W"; }
-.icon-11:before { content: "I"; }
-.icon-12:before { content: "I"; }
+.icon-9:before { content: "Q"; }
+.icon-10:before { content: "Q"; }
+.icon-11:before { content: "Q"; }
+.icon-12:before { content: "Q"; }
+/* check below if you have time */
 .icon-13:before { content: "I"; }
 .icon-14:before { content: "I"; }
 .icon-15:before { content: "W"; }
 .icon-16:before { content: "I"; }
 .icon-17:before { content: "W"; }
 .icon-18:before { content: "U"; }
-.icon-19:before { content: "Z"; }
-.icon-20:before { content: "Z"; }
-.icon-21:before { content: "Z"; }
-.icon-22:before { content: "Z"; }
-.icon-23:before { content: "Z"; }
+.icon-19:before { content: "M"; }
+.icon-20:before { content: "M"; }
+.icon-21:before { content: "M"; }
+.icon-22:before { content: "M"; }
+.icon-23:before { content: "F"; }
 .icon-24:before { content: "E"; }
 .icon-25:before { content: "E"; }
-.icon-26:before { content: "3"; }
-.icon-27:before { content: "a"; }
+.icon-26:before { content: "Y"; }
+.icon-27:before { content: "H"; }
 .icon-28:before { content: "A"; }
-.icon-29:before { content: "a"; }
+.icon-29:before { content: "H"; }
 .icon-30:before { content: "A"; }
-.icon-31:before { content: "6"; }
-.icon-32:before { content: "1"; }
-.icon-33:before { content: "6"; }
-.icon-34:before { content: "1"; }
+.icon-31:before { content: "C"; }
+.icon-32:before { content: "B"; }
+.icon-33:before { content: "C"; }
+.icon-34:before { content: "B"; }
 .icon-35:before { content: "W"; }
-.icon-36:before { content: "1"; }
+.icon-36:before { content: "B"; }
 .icon-37:before { content: "S"; }
 .icon-38:before { content: "S"; }
 .icon-39:before { content: "S"; }
@@ -147,7 +125,7 @@ i {
 .icon-41:before { content: "W"; }
 .icon-42:before { content: "I"; }
 .icon-43:before { content: "W"; }
-.icon-44:before { content: "a"; }
+.icon-44:before { content: "A"; }
 .icon-45:before { content: "S"; }
 .icon-46:before { content: "U"; }
 .icon-47:before { content: "S"; }
